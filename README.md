@@ -17,29 +17,29 @@
   <a href="https://discord.gg/jgjmyYgHwB">
     <img src="https://img.shields.io/discord/1258658826257961020" alt="Discord" title="Discord" />
   </a>
-  
-
 </p>
 
 ---
 
-## Features
+## ✨ Features
 
-* In-process OLTP database engine library
-* Asynchronous I/O support with `io_uring`
-* SQLite compatibility ([status](COMPAT.md))
-  * SQL dialect support
-  * File format support
-  * SQLite C API
-* JavaScript/WebAssembly bindings (_wip_)
+- **In-process OLTP database engine library**
+- **Asynchronous I/O support** with `io_uring`
+- **SQLite compatibility** ([status](COMPAT.md)):
+  - SQL dialect support
+  - File format support
+  - SQLite C API
+- **JavaScript/WebAssembly bindings** (_work-in-progress_)
 
-## Getting Started
+---
 
-### CLI
+## 🚀 Getting Started
+
+### ⚙️ CLI Installation
 
 Install `limbo` with:
 
-```shell 
+```bash
 curl --proto '=https' --tlsv1.2 -LsSf \
   https://github.com/penberg/limbo/releases/latest/download/limbo-installer.sh | sh
 ```
@@ -58,17 +58,17 @@ limbo> SELECT * FROM users;
 2|bob
 ```
 
-### JavaScript (wip)
+### ⚛ JavaScript (Work-in-Progress)
 
 Installation:
 
-```console
+```bash
 npm i limbo-wasm
 ```
 
 Example usage:
 
-```js
+```javascript
 import { Database } from 'limbo-wasm';
 
 const db = new Database('sqlite.db');
@@ -77,9 +77,9 @@ const users = stmt.all();
 console.log(users);
 ```
 
-### Python (wip)
+### 🖋 Python (Work-in-Progress)
 
-```console
+```bash
 pip install pylimbo
 ```
 
@@ -94,63 +94,70 @@ res = cur.execute("SELECT * FROM users")
 print(res.fetchone())
 ```
 
-## Developing
+---
 
-Build and run `limbo` cli: 
+## ⚒️ Developing
 
-```shell 
+Build and run the `limbo` CLI:
+
+```bash
 cargo run --package limbo --bin limbo database.db
 ```
 
 Run tests:
 
-```console
+```bash
 cargo test
 ```
 
 Test coverage report:
 
-```
+```bash
 cargo tarpaulin -o html
 ```
 
 Run benchmarks:
 
-```console
+```bash
 cargo bench
 ```
 
-Run benchmarks and generate flamegraphs:
+Generate flamegraphs:
 
-```console
+```bash
 echo -1 | sudo tee /proc/sys/kernel/perf_event_paranoid
 cargo bench --bench benchmark -- --profile-time=5
 ```
 
-## FAQ
+---
+
+## 🚀 FAQ
 
 ### How is Limbo different from libSQL?
 
-Limbo is a research project to build a SQLite compatible in-process database in Rust with native async support. The libSQL project, on the other hand, is an open source, open contribution fork of SQLite, with focus on production features such as replication, backups, encryption, and so on. There is no hard dependency between the two projects. Of course, if Limbo becomes widely successful, we might consider merging with libSQL, but that is something that will be decided in the future.
+Limbo is a research project to build a SQLite-compatible in-process database in Rust with native async support. The libSQL project, on the other hand, is an open-source fork of SQLite focusing on production features such as replication, backups, and encryption. There is no hard dependency between the two projects. 
 
-## Publications
+---
 
-* Pekka Enberg, Sasu Tarkoma, Jon Crowcroft Ashwin Rao (2024). Serverless Runtime / Database Co-Design With Asynchronous I/O. In _EdgeSys ‘24_. [[PDF]](https://penberg.org/papers/penberg-edgesys24.pdf)
-* Pekka Enberg, Sasu Tarkoma, and Ashwin Rao (2023). Towards Database and Serverless Runtime Co-Design. In _CoNEXT-SW ’23_. [[PDF](https://penberg.org/papers/penberg-conext-sw-23.pdf)] [[Slides](https://penberg.org/papers/penberg-conext-sw-23-slides.pdf)]
+## 🖊 Publications
 
-## Contributing
+- Pekka Enberg, Sasu Tarkoma, Jon Crowcroft Ashwin Rao (2024). **Serverless Runtime / Database Co-Design With Asynchronous I/O.** In _EdgeSys ‘24_. [[PDF]](https://penberg.org/papers/penberg-edgesys24.pdf)
+- Pekka Enberg, Sasu Tarkoma, and Ashwin Rao (2023). **Towards Database and Serverless Runtime Co-Design.** In _CoNEXT-SW ’23_. [[PDF](https://penberg.org/papers/penberg-conext-sw-23.pdf)] [[Slides](https://penberg.org/papers/penberg-conext-sw-23-slides.pdf)]
 
-We'd love to have you contribute to Limbo! Check out the [contribution guide] to get started.
+---
 
-## License
+## 🙏 Contributing
 
-This project is licensed under the [MIT license].
+We'd love to have you contribute to Limbo! Check out the [Contribution Guide](https://github.com/penberg/limbo/blob/main/CONTRIBUTING.md) to get started.
 
-### Contribution
+---
 
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in Limbo by you, shall be licensed as MIT, without any additional
-terms or conditions.
+## 🔒 License
 
-[contribution guide]: https://github.com/penberg/limbo/blob/main/CONTRIBUTING.md
-[MIT license]: https://github.com/penberg/limbo/blob/main/LICENSE.md
+This project is licensed under the [MIT license](https://github.com/penberg/limbo/blob/main/LICENSE.md).
+
+---
+
+<p align="center">
+  <em>"Built with passion for the developer community."</em>
+</p>
